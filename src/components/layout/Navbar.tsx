@@ -1,11 +1,12 @@
+import { Link } from "react-router-dom"
+
 function Navbar (){
     return(
-        <ul>
-            <li>خانه</li>
-            <li>دسته‌بندی</li>
-            <li>درباره‌ما</li>
-            <li>سبد خرید</li>
-        </ul>
+        <nav>
+            <Link to="/">خانه</Link>
+            <Link to="/about">درباره‌ما</Link>
+            <Link to="/cart">سبد خرید</Link>
+        </nav>
     )
 }
 

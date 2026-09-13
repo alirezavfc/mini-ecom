@@ -1,13 +1,11 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
-function Navbar (){
-    return(
-        <nav>
-            <Link to="/">خانه</Link>
-            <Link to="/about">درباره‌ما</Link>
-            <Link to="/cart">سبد خرید</Link>
-        </nav>
-    )
+function Navbar() {
+  return (
+    <nav className="flex gap-6">
+      <Link to="/about">درباره‌ما</Link>
+    </nav>
+  );
 }
 
-export default Navbar
+export default Navbar;

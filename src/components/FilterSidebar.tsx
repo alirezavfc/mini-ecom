@@ -1,25 +1,155 @@
-function FilterSidebar() {
+interface FilterSidebarProps {
+  setCategory: (category: string) => void;
+  setBrand: (brand: string) => void;
+  setSort: (sort: string) => void;
+  clearFilters: () => void;
+  category: string;
+  brand: string;
+  sort: string;
+}
+
+function FilterSidebar({
+  setCategory,
+  setBrand,
+  setSort,
+  clearFilters,
+  category,
+  brand,
+  sort,
+}: FilterSidebarProps) {
   return (
-    <aside>
-      <label htmlFor="category-mobile">موبایل</label>
-      <input type="radio" id="category-mobile" name="category" value="mobile" />
+    <aside className="flex flex-col bg-white border rounded-xl p-10 shadow-md w-64 gap-8">
+      <div className="flex flex-col gap-1">
+        <p className="font-semibold text-gray-700 mb-3">دسته‌بندی کالاها:</p>
+        <label className="flex items-center gap-2 cursor-pointer">
+          <input
+            type="radio"
+            name="category"
+            value="mobile"
+            onChange={() => setCategory("mobile")}
+            checked={category === "mobile"}
+          />
+          موبایل
+        </label>
+        <label className="flex items-center gap-2 cursor-pointer">
+          <input
+            type="radio"
+            name="category"
+            value="laptop"
+            onChange={() => setCategory("laptop")}
+            checked={category === "laptop"}
+          />
+          لپ تاپ
+        </label>
 
-      <label htmlFor="category-laptop">لپ تاپ</label>
-      <input type="radio" id="category-laptop" name="category" value="laptop" />
+        <label className="flex items-center gap-2 cursor-pointer">
+          <input
+            type="radio"
+            name="category"
+            value="tablet"
+            onChange={() => setCategory("tablet")}
+            checked={category === "tablet"}
+          />
+          تبلت
+        </label>
+      </div>
 
-      <label htmlFor="category-tablet">تبلت</label>
-      <input type="radio" id="category-tablet" name="category" value="tablet" />
+      <div className="flex flex-col gap-1">
+        <p className="font-semibold text-gray-700 mb-3">برند:</p>
+        <label className="flex items-center gap-2 cursor-pointer">
+          <input
+            type="radio"
+            name="brand"
+            value="Apple"
+            onChange={(e) => setBrand(e.target.value)}
+            checked={brand === "Apple"}
+          />
+          Apple
+        </label>
+        <label className="flex items-center gap-2 cursor-pointer">
+          <input
+            type="radio"
+            name="brand"
+            value="HTC"
+            onChange={(e) => setBrand(e.target.value)}
+            checked={brand === "HTC"}
+          />
+          HTC
+        </label>
+        <label className="flex items-center gap-2 cursor-pointer">
+          <input
+            type="radio"
+            name="brand"
+            value="Lenovo"
+            onChange={(e) => setBrand(e.target.value)}
+            checked={brand === "Lenovo"}
+          />
+          Lenovo
+        </label>
+        <label className="flex items-center gap-2 cursor-pointer">
+          <input
+            type="radio"
+            name="brand"
+            value="Nokia"
+            onChange={(e) => setBrand(e.target.value)}
+            checked={brand === "Nokia"}
+          />
+          Nokia
+        </label>
+        <label className="flex items-center gap-2 cursor-pointer">
+          <input
+            type="radio"
+            name="brand"
+            value="Samsung"
+            onChange={(e) => setBrand(e.target.value)}
+            checked={brand === "Samsung"}
+          />
+          Samsung
+        </label>
+        <label className="flex items-center gap-2 cursor-pointer">
+          <input
+            type="radio"
+            name="brand"
+            value="Sony"
+            onChange={(e) => setBrand(e.target.value)}
+            checked={brand === "Sony"}
+          />
+          Sony
+        </label>
+      </div>
 
-      <label htmlFor="price-ascending">مرتب سازی بر اساس افزایش قیمت</label>
-      <input type="radio" id="price-ascending" name="price" value="ascending" />
+      <div className="flex flex-col gap-1">
+        <p className="font-semibold text-gray-700 mb-3">
+          مرتب‌سازی براساس قیمت:
+        </p>
+        <label className="flex items-center gap-2 cursor-pointer">
+          <input
+            type="radio"
+            name="price"
+            value="ascending"
+            onChange={(e) => setSort(e.target.value)}
+            checked={sort === "ascending"}
+          />
+          ارزان‌ترین
+        </label>
+        <label className="flex items-center gap-2 cursor-pointer">
+          <input
+            type="radio"
+            name="price"
+            value="descending"
+            onChange={(e) => setSort(e.target.value)}
+            checked={sort === "descending"}
+          />
+          گرانترین
+        </label>
+      </div>
 
-      <label htmlFor="price-descending">مرتب سازی بر اساس کاهش قیمت</label>
-      <input
-        type="radio"
-        id="price-descending"
-        name="price"
-        value="descending"
-      />
+      <button
+        className="w-full py-2 rounded-lg border hover:bg-gray-100 transition duration-200"
+        onClick={clearFilters}
+      >
+        پاک کردن فیلترها
+      </button>
     </aside>
   );
 }

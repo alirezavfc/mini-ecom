@@ -1,6 +1,7 @@
 import type { Product } from "../types/index";
 import ProductCard from "./ProductCard";
 import { useCart } from "../hooks/useCart";
+import { useSearch } from "../hooks/useSearch";
 
 interface ProductGridProps {
   products: Product[];
@@ -11,13 +12,21 @@ interface ProductGridProps {
 
 function ProductGrid({ products, category, brand, sort }: ProductGridProps) {
   const { addToCart } = useCart();
+  const { search } = useSearch();
+
   const filteredProducts = products.filter(
     (product) =>
       (category === "" || product.category === category) &&
       (brand === "" || product.brand === brand),
   );
 
-  const sortedProducts = [...filteredProducts];
+  const searchedProduct = filteredProducts.filter(
+    (product) =>
+      product.brand.toLowerCase().includes(search.toLowerCase()) ||
+      product.name.toLowerCase().includes(search.toLowerCase()),
+  );
+
+  const sortedProducts = [...searchedProduct];
 
   switch (sort) {
     case "ascending":

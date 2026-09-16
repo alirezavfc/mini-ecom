@@ -1,14 +1,17 @@
 import Header from "./Header";
 import Footer from "./Footer";
 import { Outlet } from "react-router-dom";
+import { SearchProvider } from "../../context/SearchProvider";
 
 function Layout() {
   return (
     <>
-      <Header />
-      <main>
-        <Outlet />
-      </main>
+      <SearchProvider>
+        <Header />
+        <main>
+          <Outlet />
+        </main>
+      </SearchProvider>
       <Footer />
     </>
   );

@@ -2,6 +2,10 @@
 
 A small e-commerce project built with React, TypeScript, Tailwind CSS, and React Router.
 
+## Live Demo
+
+https://alirezavfc.github.io/mini-ecom/
+
 ## About
 
 این پروژه یک فروشگاه اینترنتی کوچک است که با React، TypeScript و

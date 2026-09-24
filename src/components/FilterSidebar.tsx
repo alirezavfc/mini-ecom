@@ -18,7 +18,7 @@ function FilterSidebar({
   sort,
 }: FilterSidebarProps) {
   return (
-    <aside className="flex flex-col bg-white border rounded-xl p-10 shadow-md w-64 gap-8">
+    <aside className="flex flex-col bg-white border rounded-xl p-10 shadow-md w-64 gap-8 md:sticky md:top-24 mx-auto md:mx-0">
       <div className="flex flex-col gap-1">
         <p className="font-semibold text-gray-700 mb-3">دسته‌بندی کالاها:</p>
         <label className="flex items-center gap-2 cursor-pointer">

@@ -12,15 +12,15 @@ function Header() {
   }, 0);
 
   return (
-    <header className="sticky top-0 z-50 grid grid-cols-[auto_1fr_auto] items-center px-4 py-6 bg-gray-800 text-white">
-      <div className="flex gap-6 justify-end items-center">
+    <header className="sticky top-0 z-50 flex flex-col gap-4 px-4 py-4 bg-gray-800 text-white md:grid md:grid-cols-[auto_1fr_auto] md:items-center md:py-6">
+      <div className="flex items-center justify-between md:justify-end md:gap-6">
         <Link to="/" className="text-xl font-bold font-betania">
           ShittyKala
         </Link>
         <Navbar />
       </div>
       <input
-        className="hidden md:block bg-gray-700 text-white px-4 py-2 rounded-lg outline-none mx-auto w-full max-w-sm"
+        className="md:block bg-gray-700 text-white px-4 py-2 rounded-lg outline-none mx-auto w-full max-w-sm"
         placeholder="جستجو..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}

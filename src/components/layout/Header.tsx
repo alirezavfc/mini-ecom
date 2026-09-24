@@ -12,7 +12,7 @@ function Header() {
   }, 0);
 
   return (
-    <header className="grid grid-cols-[auto_1fr_auto] items-center px-4 py-6 bg-gray-800 text-white">
+    <header className="sticky top-0 z-50 grid grid-cols-[auto_1fr_auto] items-center px-4 py-6 bg-gray-800 text-white">
       <div className="flex gap-6 justify-end items-center">
         <Link to="/" className="text-xl font-bold font-betania">
           ShittyKala

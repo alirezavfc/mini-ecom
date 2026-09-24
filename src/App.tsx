@@ -12,7 +12,7 @@ import { CartProvider } from "./context/CartProvider";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/mini-ecom">
       <CartProvider>
         <Routes>
           <Route element={<Layout />}>

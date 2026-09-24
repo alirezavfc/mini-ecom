@@ -12,6 +12,7 @@ function ProductCard({ product, onAddToCart }: ProductCardProps) {
     <div className="rounded-lg border p-4 shadow-mdrounded-lg border p-4 shadow-md transition duration-300 hover:shadow-2xl hover:scale-105 flex flex-col">
       <Link to={`/product/${product.id}`}>
         <img
+          loading="lazy"
           className="w-full h-48 object-contain cursor-pointer"
           src={product.image}
           alt={product.name}
